@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+library(geisha)
 ```
 
 # geisha <img src='man/figures/logo.svg' align="right" height="139" />
@@ -18,11 +19,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-*geisha* is an R data package that provides the expression dataset from the
+`{geisha}` is an R data package that provides the expression dataset from the
 Gallus Expression in Situ Hybridization Analysis
 ([GEISHA](http://geisha.arizona.edu/geisha/about.jsp)) project.
 
-The data here provided is of June 2, 2021, 12:29 AM. You can check whether this is
+The data here provided is of `r last_updates$date[1]`. You can check whether this is
 the latest version by visiting
 [http://geisha.arizona.edu/geisha/downloads.jsp](http://geisha.arizona.edu/geisha/downloads.jsp).
 
@@ -37,22 +38,19 @@ remotes::install_github("ramiromagno/geisha")
 
 ## Usage
 
-This package provides one single dataset: `geisha_expression`.
+At this moment this package provides only one single dataset: `expression_txt`.
 
 ```{r example}
 library(geisha)
 
-geisha_expression
+expression_txt
 ```
 
 Each row refers to a gene found to be expressed in the chick embryo at a
-specific Hamilton-Hamburger stage (`stage`) and anatomical location (`tissue`),
+specific set of Hamilton-Hamburger stages (`stages`) and anatomical locations (`locations`),
 obtained from a specific source (indicated by the `geisha_id`).
 
-Please note that the `stage` variable is a factor whose levels are: `r knitr::combine_words(levels(geisha_expression$stage))`, following
-[Hamilton-Hamburger stage
-series](https://anatomypubs.onlinelibrary.wiley.com/doi/abs/10.1002/aja.1001950405)
-of chick embryos.
+Please note that the columns `stages` and `locations` are list-columns.
 
 ## Data source
 

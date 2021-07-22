@@ -8,7 +8,7 @@ Authors@R: c(
       role = c("aut", "cre"),
       comment = c(ORCID = "0000-0001-5226-3441"))
     )
-Description: GEISHA expression data. This data is obtained
+Description: GEISHA expression data. These data are obtained
     from GEISHA <http://geisha.arizona.edu/geisha/downloads.jsp/>.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -17,4 +17,16 @@ RoxygenNote: 7.1.1
 Depends: 
     R (>= 2.10)
 Imports: 
-    tibble
+    rvest,
+    httr,
+    tibble,
+    here,
+    purrr,
+    magrittr,
+    dtplyr,
+    dplyr,
+    data.table,
+    glue,
+    lubridate,
+    stringr,
+    rlang
