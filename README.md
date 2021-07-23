@@ -10,7 +10,7 @@
 from the Gallus Expression in Situ Hybridization Analysis
 ([GEISHA](http://geisha.arizona.edu/geisha/about.jsp)) project.
 
-The data here provided is of 2021-07-21 12:20:00. You can check whether
+The data here provided is of 2021-07-22 12:16:00. You can check whether
 this is the latest version by visiting
 <http://geisha.arizona.edu/geisha/downloads.jsp>.
 
@@ -25,8 +25,10 @@ remotes::install_github("ramiromagno/geisha")
 
 ## Usage
 
-At this moment this package provides only one single dataset:
-`expression_txt`.
+At this moment this package provides only two datasets: `expression_txt`
+and `expression_xml`.
+
+### Dataset `expression_txt`
 
 ``` r
 library(geisha)
@@ -54,6 +56,31 @@ locations (`locations`), obtained from a specific source (indicated by
 the `geisha_id`).
 
 Please note that the columns `stages` and `locations` are list-columns.
+
+### Dataset `expression_xml`
+
+Contrary to `expression_txt` that only lists the stages and the
+locations when/where a gene is found expressed, in the object
+`expression_xml` you can actually know the relationship between `stage`
+and `location`, i.e., which stages associate with which locations.
+
+``` r
+expression_xml
+#> # A tibble: 93,000 x 5
+#>    ncbi_gene_id gene_name geisha_id               stage location         
+#>    <chr>        <chr>     <chr>                   <chr> <chr>            
+#>  1 373885       FZD10     Frizzled10.Chapman.2004 4     Primitive Streak 
+#>  2 373885       FZD10     Frizzled10.Chapman.2004 5     Primitive Streak 
+#>  3 373885       FZD10     Fz10.Chapman.2008       10    Neural Plate/Tube
+#>  4 373885       FZD10     Fz10.Chapman.2008       10    Primitive Streak 
+#>  5 373885       FZD10     Fz10.Chapman.2008       3     Primitive Streak 
+#>  6 373885       FZD10     Fz10.Chapman.2008       3     Unlabeled        
+#>  7 373885       FZD10     Fz10.Chapman.2008       4     Extraembryonic   
+#>  8 373885       FZD10     Fz10.Chapman.2008       4     Germinal Crescent
+#>  9 373885       FZD10     Fz10.Chapman.2008       4     Primitive Streak 
+#> 10 373885       FZD10     Fz10.Chapman.2008       5     Area Pellucida   
+#> # … with 92,990 more rows
+```
 
 ## Data source
 

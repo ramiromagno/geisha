@@ -35,3 +35,26 @@ NULL
 #' }
 #'
 'last_updates'
+
+#' GEISHA Expression Data (expression.xml)
+#'
+#' This dataset contains NCBI Gene ID, NCBI Gene Name, GEISHA ID, embryo stages
+#' and tissue locations.
+#'
+#' @format A \code{\link[tibble]{tibble}} of 5 variables (columns):
+#' \describe{
+#' \item{\code{ncbi_gene_id}}{NCBI gene identifier.}
+#' \item{\code{gene_name}}{NCBI gene name.}
+#' \item{\code{geisha_id}}{GEISHA identifier.}
+#' \item{\code{stage}}{Hamilton-Hamburger stages.}
+#' \item{\code{location}}{Anatomical location.}
+#' }
+#'
+#' Data set generation workflow can be found at the source of this package in
+#' \code{data-raw/data.R}.
+#'
+#' @source
+#' Original dataset from:
+#' \url{http://geisha.arizona.edu/geisha/expression.xml}.
+#'
+"expression_xml"

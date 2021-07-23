@@ -38,7 +38,9 @@ remotes::install_github("ramiromagno/geisha")
 
 ## Usage
 
-At this moment this package provides only one single dataset: `expression_txt`.
+At this moment this package provides only two datasets: `expression_txt` and `expression_xml`.
+
+### Dataset `expression_txt`
 
 ```{r example}
 library(geisha)
@@ -51,6 +53,17 @@ specific set of Hamilton-Hamburger stages (`stages`) and anatomical locations (`
 obtained from a specific source (indicated by the `geisha_id`).
 
 Please note that the columns `stages` and `locations` are list-columns.
+
+### Dataset `expression_xml`
+
+Contrary to `expression_txt` that only lists the stages and the locations when/where a
+gene is found expressed, in the object `expression_xml` you can actually know
+the relationship between `stage` and `location`, i.e., which stages associate
+with which locations.
+
+```{r example2}
+expression_xml
+```
 
 ## Data source
 
