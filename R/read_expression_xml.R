@@ -47,5 +47,6 @@ read_expression_xml <- function() {
     dplyr::select(-'GEISHA_entries_id') %>%
     tidyr::unnest_longer('GEISHA_entries') %>%
     dplyr::rename(location = GEISHA_entries) %>%
+    dplyr::mutate(stage = factor(stage, levels = geisha::hh_stages())) %>%
     dplyr::relocate(ncbi_gene_id, gene_name, geisha_id, stage, location)
 }
