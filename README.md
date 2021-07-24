@@ -68,7 +68,7 @@ and `location`, i.e., which stages associate with which locations.
 expression_xml
 #> # A tibble: 93,000 x 5
 #>    ncbi_gene_id gene_name geisha_id               stage location         
-#>    <chr>        <chr>     <chr>                   <chr> <chr>            
+#>    <chr>        <chr>     <chr>                   <fct> <chr>            
 #>  1 373885       FZD10     Frizzled10.Chapman.2004 4     Primitive Streak 
 #>  2 373885       FZD10     Frizzled10.Chapman.2004 5     Primitive Streak 
 #>  3 373885       FZD10     Fz10.Chapman.2008       10    Neural Plate/Tube
